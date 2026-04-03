@@ -432,7 +432,7 @@ export default function ARIAApp() {
   const startRef = useRef(Date.now());
 
   // Detected kill chain phases
-  const detectedCats = new Set(visibleAlerts.map(a => a.cat));
+  const detectedCats = new Set(visibleAlerts.filter(Boolean).map(a => a.cat));
 
   // Severity counts
   const sevCounts = ALERTS.reduce((a, x) => { a[x.sev] = (a[x.sev] || 0) + 1; return a; }, {});
@@ -460,7 +460,7 @@ export default function ARIAApp() {
       briefedRef.current = true;
       setTimeout(() => sendMessage("Brief me on this incident. What's happening right now, how severe is it, and what's the attacker's objective?", true), 800);
     }
-  }, [visibleAlerts]);
+  }, [visibleAlerts, sendMessage]);
 
   // Scroll chat to bottom
   useEffect(() => {
@@ -506,7 +506,7 @@ export default function ARIAApp() {
   }, [messages, loading, addEntities]);
 
   const onKey = e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(input); } };
-  const filteredAlerts = sevFilter === "all" ? visibleAlerts : visibleAlerts.filter(a => a.sev === sevFilter);
+  const filteredAlerts = (sevFilter === "all" ? visibleAlerts : visibleAlerts.filter(a => a.sev === sevFilter)).filter(Boolean);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "90vh", minHeight: 600, fontFamily: "var(--font-sans)" }}>
