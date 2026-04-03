@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIA — AI-Powered SIEM Investigation Platform</title>
+    <meta name="description" content="Advanced Real-time Investigation Assistant. AI-powered SOC analysis with MITRE ATT&CK mapping and India DPDP Act 2023 compliance." />
+    <style>
+      /* ── Design tokens ───────────────────────────────────── */
+      :root {
+        --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: 'IBM Plex Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+        --color-background-primary:   #FFFFFF;
+        --color-background-secondary: #F7F7F5;
+        --color-background-tertiary:  #EFEFEB;
+
+        --color-text-primary:   #1A1A18;
+        --color-text-secondary: #525250;
+        --color-text-tertiary:  #8C8C8A;
+
+        --color-border-primary:   #C8C8C4;
+        --color-border-secondary: #DEDED9;
+        --color-border-tertiary:  #EAEAE6;
+
+        --border-radius-sm: 4px;
+        --border-radius-md: 6px;
+        --border-radius-lg: 10px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html, body, #root {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background: var(--color-background-primary);
+        color: var(--color-text-primary);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Scrollbar styling */
+      ::-webkit-scrollbar { width: 5px; height: 5px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: var(--color-border-secondary); border-radius: 3px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--color-border-primary); }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
