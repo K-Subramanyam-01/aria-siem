@@ -1,8 +1,9 @@
 {
   "name": "aria-siem",
   "version": "1.0.0",
-  "description": "ARIA — AI-Powered SOC Investigation Platform with MITRE ATT&CK mapping and India DPDP Act 2023 compliance",
+  "description": "ARIA — AI-Powered SOC Investigation Platform",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
