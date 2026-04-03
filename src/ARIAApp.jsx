@@ -460,7 +460,7 @@ export default function ARIAApp() {
       briefedRef.current = true;
       setTimeout(() => sendMessage("Brief me on this incident. What's happening right now, how severe is it, and what's the attacker's objective?", true), 800);
     }
-  }, [visibleAlerts, sendMessage]);
+  }, [visibleAlerts]);
 
   // Scroll chat to bottom
   useEffect(() => {
