@@ -65,7 +65,7 @@ function buildSystemPrompt(alerts) {
 
 You have real-time access to the following ${alerts.length} security alerts from the last 2 hours:
 
-${JSON.stringify(alerts, null, 2)}
+${JSON.stringify(alerts.map(a => ({id:a.id,ts:a.ts,sev:a.sev,cat:a.cat,rule:a.rule,host:a.host,user:a.user})))}
 
 INSTRUCTIONS:
 1. Answer natural language security questions with authority — you are the expert
